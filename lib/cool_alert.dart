@@ -107,6 +107,7 @@ class CoolAlert {
 
     /// Reverse the order of the buttons
     bool reverseBtnOrder = false,
+    bool canPop = false,
   }) {
     if (autoCloseDuration != null) {
       Future.delayed(autoCloseDuration, () {
@@ -143,13 +144,16 @@ class CoolAlert {
       reverseBtnOrder: reverseBtnOrder,
     );
 
-    final child = AlertDialog(
-      contentPadding: EdgeInsets.zero,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(borderRadius),
-      ),
-      content: CoolAlertContainer(
-        options: options,
+    final child = PopScope(
+      canPop: canPop,
+      child: AlertDialog(
+        contentPadding: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+        ),
+        content: CoolAlertContainer(
+          options: options,
+        ),
       ),
     );
 
