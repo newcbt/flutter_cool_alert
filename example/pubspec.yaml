@@ -21,3 +21,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+dependency_overrides: 
+  flare_flutter:
+    git:
+      url: https://github.com/untillnesss/Flare-Flutter.git
+      path: flare_flutter
+      ref: stable
