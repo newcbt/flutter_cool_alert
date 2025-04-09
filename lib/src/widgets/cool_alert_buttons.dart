@@ -20,6 +20,16 @@ class CoolAlertButtons extends StatelessWidget {
       buttons = buttons.reversed.toList();
     }
 
+    buttons = buttons.expand((e) {
+      return [
+        e,
+        SizedBox(
+          width: 8,
+        )
+      ];
+    }).toList()
+      ..removeLast();
+
     return Container(
       margin: const EdgeInsets.only(top: 10.0),
       child: Row(
@@ -101,8 +111,15 @@ class CoolAlertButtons extends StatelessWidget {
       ),
     );
 
-    final cancelBtn = GestureDetector(
-      onTap: onTap,
+    final cancelBtn = MaterialButton(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0),
+          side: BorderSide(
+            color: Colors.grey,
+            width: 1.5,
+          )),
+      elevation: 0,
+      onPressed: onTap,
       child: Center(
         child: btnText,
       ),
