@@ -1,2 +1,0 @@
-/home/user/flutter_cool_alert/example/android/app/.cxx/Debug/4ny6kvm5/armeabi-v7a/CMakeFiles/edit_cache.dir
-/home/user/flutter_cool_alert/example/android/app/.cxx/Debug/4ny6kvm5/armeabi-v7a/CMakeFiles/rebuild_cache.dir

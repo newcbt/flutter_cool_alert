@@ -1,1 +1,0 @@
-/home/user/flutter_cool_alert/example/build/app/intermediates/cxx/Debug/4ny6kvm5/obj/x86_64
