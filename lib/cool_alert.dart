@@ -108,6 +108,11 @@ class CoolAlert {
     /// Reverse the order of the buttons
     bool reverseBtnOrder = false,
     bool canPop = false,
+    double? iconWidth,
+    double? iconHeight,
+    double? iconHeightFactore,
+    EdgeInsets? contentPadding,
+    EdgeInsets? headerPadding
   }) {
     if (autoCloseDuration != null) {
       Future.delayed(autoCloseDuration, () {
@@ -142,6 +147,11 @@ class CoolAlert {
       closeOnConfirmBtnTap: closeOnConfirmBtnTap,
       autoCloseDuration: autoCloseDuration,
       reverseBtnOrder: reverseBtnOrder,
+      iconWidth: iconWidth,
+      iconHeight: iconHeight,
+      contentPadding: contentPadding,
+      iconHeightFactore: iconHeightFactore,
+      headerPadding: headerPadding,
     );
 
     final child = PopScope(

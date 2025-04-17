@@ -24,7 +24,7 @@ class CoolAlertContainer extends StatelessWidget {
     final widget = _buildWidget(context);
 
     final content = Container(
-      padding: const EdgeInsets.all(20.0),
+      padding: options.contentPadding ?? const EdgeInsets.all(20.0),
       child: Column(
         children: [
           title,
@@ -80,6 +80,7 @@ class CoolAlertContainer extends StatelessWidget {
         anim = options.flareAsset;
       }
       return Container(
+        padding: options.headerPadding,
         width: double.infinity,
         decoration: BoxDecoration(
           color: options.backgroundColor,
@@ -88,23 +89,28 @@ class CoolAlertContainer extends StatelessWidget {
             topRight: Radius.circular(options.borderRadius!),
           ),
         ),
-        child: SizedBox(
-          height: 150,
-          width: 150,
-          child: options.lottieAsset == null
-              ? FlareActor(
-                  anim,
-                  animation:
-                      options.loopAnimation ? options.flareAnimationName : null,
-                  controller: options.loopAnimation
-                      ? null
-                      : SingleLoopController(
-                          options.flareAnimationName!,
-                          1,
-                        ),
-                )
-              : Lottie.asset(options.lottieAsset!,
-                  repeat: options.loopAnimation),
+        child: ClipRRect(
+          child: Align(
+            heightFactor:  options.iconHeightFactore ?? 1,
+            child: Container(
+              height: options.iconHeight ?? 150,
+              width: options.iconWidth ?? 150,
+              child: options.lottieAsset == null
+                  ? FlareActor(
+                      anim,
+                      animation:
+                          options.loopAnimation ? options.flareAnimationName : null,
+                      controller: options.loopAnimation
+                          ? null
+                          : SingleLoopController(
+                              options.flareAnimationName!,
+                              1,
+                            ),
+                    )
+                  : Lottie.asset(options.lottieAsset!,
+                      repeat: options.loopAnimation),
+            ),
+          ),
         ),
       );
     }
