@@ -28,6 +28,9 @@ class CoolAlertOptions {
   bool closeOnConfirmBtnTap;
   Duration? autoCloseDuration;
   bool reverseBtnOrder = false;
+  double? iconWidth, iconHeight, iconHeightFactore;
+  EdgeInsets? contentPadding, headerPadding;
+  bool showOkButton;
 
   CoolAlertOptions({
     this.title,
@@ -56,5 +59,11 @@ class CoolAlertOptions {
     this.closeOnConfirmBtnTap = true,
     this.autoCloseDuration,
     this.reverseBtnOrder = false,
+    this.iconWidth,
+    this.iconHeight,
+    this.contentPadding,
+    this.headerPadding,
+    this.iconHeightFactore,
+    this.showOkButton = true,
   });
 }

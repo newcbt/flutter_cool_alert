@@ -107,6 +107,14 @@ class CoolAlert {
 
     /// Reverse the order of the buttons
     bool reverseBtnOrder = false,
+    bool canPop = false,
+    double? iconWidth,
+    double? iconHeight,
+    double? iconHeightFactore,
+    EdgeInsets? contentPadding,
+    EdgeInsets? headerPadding,
+
+    bool showOkButton = true,
   }) {
     if (autoCloseDuration != null) {
       Future.delayed(autoCloseDuration, () {
@@ -141,15 +149,24 @@ class CoolAlert {
       closeOnConfirmBtnTap: closeOnConfirmBtnTap,
       autoCloseDuration: autoCloseDuration,
       reverseBtnOrder: reverseBtnOrder,
+      iconWidth: iconWidth,
+      iconHeight: iconHeight,
+      contentPadding: contentPadding,
+      iconHeightFactore: iconHeightFactore,
+      headerPadding: headerPadding,
+      showOkButton: showOkButton,
     );
 
-    final child = AlertDialog(
-      contentPadding: EdgeInsets.zero,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(borderRadius),
-      ),
-      content: CoolAlertContainer(
-        options: options,
+    final child = PopScope(
+      canPop: canPop,
+      child: AlertDialog(
+        contentPadding: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+        ),
+        content: CoolAlertContainer(
+          options: options,
+        ),
       ),
     );
 

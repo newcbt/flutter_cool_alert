@@ -38,7 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
           context: context,
           type: CoolAlertType.success,
           text: 'Transaction completed successfully!',
-          autoCloseDuration: const Duration(seconds: 2),
+          // autoCloseDuration: const Duration(seconds: 2),
+          canPop: true,
         );
       },
       text: 'Success',
@@ -75,7 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
       onTap: () {
         CoolAlert.show(
           context: context,
+          contentPadding: const EdgeInsets.all(20.0).copyWith(top: 0),
+          iconWidth: 300,
+          iconHeight: 300,
+          iconHeightFactore: .7,
+          backgroundColor: Colors.transparent,
           type: CoolAlertType.info,
+          headerPadding: EdgeInsets.only(top: 20),
           text: 'Buy two, get one free',
           titleTextStyle: TextStyle(
             color: Colors.blue[900],
