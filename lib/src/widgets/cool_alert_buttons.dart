@@ -43,6 +43,8 @@ class CoolAlertButtons extends StatelessWidget {
     final showCancelBtn =
         options.type == CoolAlertType.confirm ? true : options.showCancelBtn!;
 
+        final showOkButton = options.showOkButton;
+
     final okayBtn = _buildButton(
       context: context,
       isOkayBtn: true,
@@ -59,6 +61,10 @@ class CoolAlertButtons extends StatelessWidget {
         }
       },
     );
+
+    if(!showOkButton){
+      return Container();
+    }
 
     if (showCancelBtn) {
       return Expanded(child: okayBtn);

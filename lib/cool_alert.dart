@@ -112,7 +112,9 @@ class CoolAlert {
     double? iconHeight,
     double? iconHeightFactore,
     EdgeInsets? contentPadding,
-    EdgeInsets? headerPadding
+    EdgeInsets? headerPadding,
+
+    bool showOkButton = true,
   }) {
     if (autoCloseDuration != null) {
       Future.delayed(autoCloseDuration, () {
@@ -152,6 +154,7 @@ class CoolAlert {
       contentPadding: contentPadding,
       iconHeightFactore: iconHeightFactore,
       headerPadding: headerPadding,
+      showOkButton: showOkButton,
     );
 
     final child = PopScope(

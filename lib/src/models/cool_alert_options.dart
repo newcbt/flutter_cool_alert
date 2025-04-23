@@ -30,6 +30,7 @@ class CoolAlertOptions {
   bool reverseBtnOrder = false;
   double? iconWidth, iconHeight, iconHeightFactore;
   EdgeInsets? contentPadding, headerPadding;
+  bool showOkButton;
 
   CoolAlertOptions({
     this.title,
@@ -63,5 +64,6 @@ class CoolAlertOptions {
     this.contentPadding,
     this.headerPadding,
     this.iconHeightFactore,
+    this.showOkButton = true,
   });
 }
